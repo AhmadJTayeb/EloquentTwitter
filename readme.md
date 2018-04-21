@@ -69,14 +69,14 @@ $ npm install eloquent-twitter
 ### Example
 ```javascript
 //Import the classes
-const EloquentTwitter = require("./EloquentTwitter").EloquentTwitter;
-const EloquentTwitterEvent = require("./EloquentTwitter").EloquentTwitterEvent;
+const EloquentTwitter = require("eloquent-twitter").EloquentTwitter;
+const EloquentTwitterEvent = require("eloquent-twitter").EloquentTwitterEvent;
 //Define Twitter API keys
 const keys = {
     consumer_key:         "",
     consumer_secret:      "",
     access_token:         "",
-    access_token_secret:  "",
+    access_token_secret:  ""
 };
 //Create new object
 let eloquentTwitter = new EloquentTwitter(keys);
