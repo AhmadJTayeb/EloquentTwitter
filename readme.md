@@ -129,5 +129,3 @@ eloquentTwitter.getUserByUsername("mrahmad1", function (user) {
     console.log(err);
 });
 '''
-
-
