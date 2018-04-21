@@ -1,0 +1,17 @@
+{
+  "name": "eloquent-twitter",
+  "version": "1.0.2",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "twitter",
+    "twit",
+    "api",
+    "eloquentt"
+  ],
+  "author": "Ahmad Tayeb",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "2.2.9"
+  }
+}
