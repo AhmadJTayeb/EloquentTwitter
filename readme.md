@@ -27,7 +27,7 @@ EloquentTwitter is a library that makes dealing with Twitter API easly and eloqu
 |getStatusesRetweets(successCallback, errorCallback)|Returns the most recent Tweets authored by the authenticating user that have been retweeted by others. |
 |uploadMediaImage(src, altText, successCallback, errorCallback)|Upload picture to EloquentTwitter and return the media_id_string. This can be attached to a tweet or message.|
 |postNewTweet(text, successCallback, errorCallback, parameters)|Updates the authenticating user’s current status, also known as Tweeting.|
-postNewReplyToTweet(text, toTweetId, successCallback, errorCallback, parameters)|Updates the authenticating user’s status in order to reply to other status.|
+|postNewReplyToTweet(text, toTweetId, successCallback, errorCallback, parameters)|Updates the authenticating user’s status in order to reply to other status.|
 |postNewTweetWithMedia(text, media_ids, successCallback, errorCallback, parameters)|Post a new tweet with media. |
 |postNewReplyToTweetWithMedia(text, media_ids, toTweetId, successCallback, errorCallback, parameters)|Updates the authenticating user’s status with media in order to reply to other status.|
 |retweet(tweetId, successCallback, errorCallback)|Retweets a tweet. Returns the original Tweet with Retweet details embedded.|
@@ -128,4 +128,88 @@ eloquentTwitter.getUserByUsername("mrahmad1", function (user) {
 }, function (err) {
     console.log(err);
 });
-'''
+```
+
+### Callbacks descriptions
+```javascript
+/**
+ * EloquentTwitter promise response.
+ *
+ * @typedef {Promise<resolve, reject>} EloquentTwitter~PromiseResponse
+ * @property {Object} parsedBody.
+ * @property {Object} resp.
+ */
+
+/**
+ * Media id promise response.
+ *
+ * @typedef {Promise<resolve, reject>} EloquentTwitter~PromiseResponseMediaId
+ * @property {string} id - the media id.
+ * @property {Object} data - the media data.
+ */
+
+/**
+ * Callback to run when data cannot be received.
+ *
+ * @callback EloquentTwitter~ErrorCallback
+ * @param {DataError} err - is the error object.
+ */
+
+/**
+ * Callback to run when one tweet is received.
+ *
+ * @callback EloquentTwitter~TweetCallback
+ * @param {DataTweet} tweet - the object of the tweet.
+ */
+
+/**
+ * Callback to run when tweets are received.
+ *
+ * @callback EloquentTwitter~TweetsCallback
+ * @param {Array.<DataTweet>} tweet - the array of tweet objects.
+ */
+
+/**
+ * Callback to run when tweets are being searched.
+ *
+ * @callback EloquentTwitter~SearchTweetsCallback
+ * @param {Array.<DataTweet>} tweets - the array of tweet objects.
+ * @param {DataSearchMetadata} metaData - the search meta data objects.
+ */
+
+/**
+ * Callback to run when one user is received.
+ *
+ * @callback EloquentTwitter~UserCallback
+ * @param {DataUser} user - the object of the user.
+ */
+
+/**
+ * Callback to run when media id is received.
+ *
+ * @callback EloquentTwitter~MediaIdCallback
+ * @param {string} mediaIdStr -  the id_str that can be attached with a tweet or message.
+ * @param {Object} [data] - the whole data object.
+ */
+
+/**
+ * Callback to run when event message create is received.
+ *
+ * @callback EloquentTwitter~DataEventMessageCreateCallback
+ * @param {DataEventMessageCreate} dataEventMessageCreate -  the object that contains information of the message.
+ */
+
+/**
+ * Callback to run when data direct message is received.
+ *
+ * @callback EloquentTwitter~DataDirectMessageCallback
+ * @param {DataDirectMessage} dataDirectMessage - the object that contains information of the message.
+ */
+
+/**
+ * Callback to run when data connection information is received.
+ *
+ * @callback EloquentTwitter~DataConnectionsCallback
+ * @param {DataConnections} dataConnections - the object that contains all connection information.
+ */
+```
