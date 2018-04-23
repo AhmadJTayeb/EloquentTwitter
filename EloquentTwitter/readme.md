@@ -58,9 +58,7 @@ EloquentTwitter is a library that makes dealing with Twitter API easly and eloqu
 
 ### Installation
 
-EloquentTwitter requires [Node.js](https://nodejs.org/) v4+ to run.
-
-Run the command.
+Run the command:
 
 ```sh
 $ npm install eloquent-twitter
